@@ -29,7 +29,7 @@ export async function getStaticProps() {
             .collection("movies")
             .find({})
             .sort({ metacritic: -1 })
-            .limit(10)
+            .limit(1000)
             .toArray();
 
         return {
