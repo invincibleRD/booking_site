@@ -1,7 +1,13 @@
 import clientPromise from "../lib/mongodb";
+import Link from 'next/link';
+
 
 export default function Top({ teachers }) {
   return (
+    <>
+    <Link href="/movies">
+      movies
+      </Link>
     <div>
       <h1>Top  Teachers of All Time</h1>
       <p>
@@ -10,15 +16,17 @@ export default function Top({ teachers }) {
       <ul>
         {teachers.map((teach) => (
           <li>
-            <h2>{teach.teacher.name}</h2>
-            <h3>{teach.teacher.teacher_id}</h3>
-            <p>{teach.teacher.qualifications}</p>
+            <h2>{teach.name}</h2>
+            <h3>{teach.bio}</h3>
+            <p>{teach.qualifications}</p>
           </li>
         ))}
       </ul>
     </div>
+    </>
   );
 }
+
 
 export async function getStaticProps() {
     try {
@@ -26,7 +34,7 @@ export async function getStaticProps() {
         const db = client.db("bookings");
 
         const teachers = await db
-            .collection("bookings_table")
+            .collection("teachers")
             .find({})
             .toArray();
 

@@ -1,7 +1,10 @@
+import Link from "next/link";
 import clientPromise from "../lib/mongodb";
 
 export default function Top({ movies }) {
   return (
+    <>
+    <Link href="/teachers">Teacheres</Link>
     <div>
       <h1>Top 1000 Movies of All Time</h1>
       <p>
@@ -17,6 +20,7 @@ export default function Top({ movies }) {
         ))}
       </ul>
     </div>
+    </>
   );
 }
 
