@@ -4,21 +4,27 @@ import Link from "next/link";
 
 export default function Success() {
   return (
+    <div className="hi">
+
     <div className="sucBox">
-      <h1>Your Booking was Successfull</h1>
+      <h1>Your Booking was Successfull.</h1>
       <div className="links">
-        <Link href="../teachers">
-          <button>Book another session</button>
+        <Link className="link1" href="../teachers">
+          <div className="book">Book another session</div>
         </Link>
         <Link className="link2" href="/">
-          <button>Home page</button>
+          <div className="home">Home page</div>
         </Link>
       </div>
+    </div>
       <style jsx global>{`
         html,
         body {
+        //   display: flex;
+        //   flex-direction: column;
+        //   align-items: center;
           padding: 0;
-          margin: 0;
+          margin: auto;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
@@ -30,29 +36,52 @@ export default function Success() {
         h1 {
         }
         .links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           width: 70%;
         }
+        .link1,
         .link2 {
+          padding: 5px;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+        .home,
+        .book {
+          border-radius: 5px;
+          padding: 8px;
+        }
+        .book {
+          max-width: 170px;
+          color: white;
+          background: green;
+        }
+        .home {
+          color: white;
+          background: blue;
           float: right;
         }
+        .book {
+        }
         .sucBox {
+          margin: auto;
+          margin-top:20px;
+          max-width: 700px;
           display: flex;
           align-items: center;
           flex-direction: column;
-          background-color: #03c04a;
+          background-color: greenyellow;
           padding: 20px;
           border-radius: 10px;
           border: 1px solid black;
         }
-        @media only screen and (max-width: 600px) {
-            h1{
-                font-size:1rem;
+        @media only screen and (max-width: 700px) {
+            .sucBox{
+                margin:15px;
             }
-          .links {
-              display:flex;
-              flex-direction:column;
-              align-items: center;
-
+          h1 {
+            font-size: 1rem;
           }
         }
       `}</style>
