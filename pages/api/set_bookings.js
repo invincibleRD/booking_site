@@ -6,12 +6,11 @@ export default async function handler(req, res) {
     res.status(400).json({ message: "Invalid HTTP POST method" });
     return;
   }
-
   try {
     const client = await clientPromise;
     const db = client.db("bookings");
     const {
-      full_name,
+      fullname,
       teacher,
       education,
       email,
@@ -19,23 +18,20 @@ export default async function handler(req, res) {
       description,
       slot_date_time,
     } = req.body;
+
     const currentDateTime = new Date().toISOString();
-    const newBooking = new Bookings_table({
-        full_name,
-        teacher,
-        education,
-        email,
-        language,
-        description,
-        slot_date_time,
-        booking_time:currentDateTime,
-      });
+    const result = await db.collection("bookings_table").insertOne({
+      fullname,
+      teacher,
+      education,
+      email,
+      language,
+      description,
+      slot_date_time,
+      booking_time: currentDateTime,
+    });
 
-      await newBooking.save();
-
-    res
-      .status(200)
-      .json({ message: "Booked Successfully!", Booking_entered: result.ops[0] });
+    res.status(200).json({ message: "Booked Successfully!" });
   } catch (error) {
     res.status(500).json({ message: "Error While Booking!", error });
   }
