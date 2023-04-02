@@ -46,9 +46,9 @@
   font-weight: 500;
   margin-bottom: 5px;
 }
-.userDetails .input_box input {
+.textArea,.userDetails .input_box input {
   height: 45px;
-  width: 100%;
+  width: 90%;
   outline: none;
   font-size: 16px;
   border-radius: 5px;
@@ -57,8 +57,8 @@
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.userDetails .inpu_btox input:focus,
-.userDetails .input_box input:valid {
+.textArea,.userDetails .inpu_btox input:focus,
+.textArea,.userDetails .input_box input:valid {
   border-color: #9b59b6;
 }
 .form .genderDetails .gender-title {
@@ -110,6 +110,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.description{
+    padding-right: 3%;
+}
+.description .textArea{
+    width: 95%;
+    height: 100px;
+    resize: none;
 }
 .form .button input:hover {
   /* transform: scale(0.99); */

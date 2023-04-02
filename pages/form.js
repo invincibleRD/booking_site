@@ -94,18 +94,16 @@ function Form() {
                     </select>
                   </div>
                   <div className={styles.input_box + ' ' + styles.selectDiv}>
-                    {/* <div className={styles.selcectDiv}> */}
                     <label className={styles.select}>Language:</label>{" "}
                     <select  className={styles.select1} name="language" id="language">
                       <option value="English">English</option>
                       <option value="Hindi">hindi </option>
                     </select>
-                    {/* </div> */}
                   </div>
                 </div>
                 <div className={styles.description}>
                     <span className={styles.details}>Description:</span>
-                  <input className={styles.textArea} name="description"></input>
+                  <textarea className={styles.textArea} placeholder="Enter topics you want to discuss" name="description"></textarea>
                 </div>
               </form>
             </div>
