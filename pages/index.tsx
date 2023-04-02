@@ -42,13 +42,13 @@ export default function Home({
         </h1>
 
         <h2 className="subtitle">By Dipendra Kumar Shah</h2>
-        {isConnected ? (
+        {/* {isConnected ? (
           <h2 className="subtitle">Assignment is in Developement ! Comeback later</h2>
         ) : (
           <h2 className="subtitle">
             Assignment is in Developement!
           </h2>
-        )}
+        )} */}
 
 
       </main>
