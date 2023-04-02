@@ -15,7 +15,7 @@ const formReducer = (state, event) => {
   const [formData, setFromData] = useReducer(formReducer, {});
   const router = useRouter();
   const teacher = router.query.teacher;
-  const teacherID = router.query.teacherID;
+  const teacherId = router.query.teacherId;
   
 
   const handleSubmit = (e) => {
