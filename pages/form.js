@@ -27,6 +27,7 @@ function Form() {
     e.preventDefault();
     if (Object.keys(formData).length == 0)
       return console.log("Dont have proper data to book");
+      if(formData.gender===undefined) formData.gender='male';
     formData.teacher = teacher;
     formData.teacher_ID = teacherId;
     console.log(formData);
