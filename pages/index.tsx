@@ -206,7 +206,7 @@ export default function Home({
       <style jsx global>{`
         html,
         body {
-          height:100%;
+          height:100vh;
           background: linear-gradient(135deg, greenyellow, #4070f4);
           padding: 0;
           margin: 0;
