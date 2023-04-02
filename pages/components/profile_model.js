@@ -24,13 +24,14 @@ export default function Profile(props) {
         </div>
 
         <div className={styles.card_content}>
-          <h2 className={styles.name}>{props.name}</h2>
+          <div className={styles.name}>{props.name}</div>
           <p className={styles.description}>{props.bio}</p>
 
           <Link
+            style={{textDecoration: "none"}}
             href={`/form?teacher=${props.name}&teacherId=${props.teacherId}`}
           >
-            <button className={styles.button}>Book</button>
+            <div className={styles.button}>Book</div>
           </Link>
         </div>
       </div>

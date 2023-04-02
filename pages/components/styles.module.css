@@ -33,11 +33,12 @@
   min-height: 500px;
   background-color: greenyellow;
 }
-.image-content,
 .card_content {
+    height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   padding: 10px 14px;
 }
 .image_content {
@@ -94,18 +95,20 @@
     top: 20px;
 } */
 .name {
-  font-size: 2 rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #333;
 }
 .description {
-  font-size: 14px;
+  font-size: 1.5rem;
   color: #707070;
   text-align: center;
 }
 .button {
+ 
   border: none;
-  font-size: 16px;
+  width: 55%;
+  font-size: 2rem;
   color: #fff;
   padding: 8px 16px;
   background-color: #4070f4;
@@ -150,4 +153,13 @@
   .swiper-navBtn {
     display: none;
   }
+}
+@media (max-width: 1100px) {
+    .name{
+        /* flex: column; */
+        font-size: 1.5rem;
+    }
+    .description{
+        font-size: 1rem;
+    }
 }
