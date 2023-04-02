@@ -61,7 +61,7 @@ function Form() {
         <div>
           <div className={styles.body}>
             <div className={styles.container}>
-              <div className={styles.title}>Booking </div>
+              <div className={styles.title}>Booking Details </div>
               <div className={styles.content}>
                 <form className={styles.form}>
                   <div className={styles.userDetails}>
