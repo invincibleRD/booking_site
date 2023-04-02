@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const client = await clientPromise;
     const db = client.db("bookings");
     const {
-      fullname,
+      full_name,
       teacher,
       education,
       email,
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
     const currentDateTime = new Date().toISOString();
     const result = await db.collection("bookings_table").insertOne({
-      fullname,
+      full_name,
       teacher,
       education,
       email,
