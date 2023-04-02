@@ -54,12 +54,12 @@ export default function Success() {
         }
         .book {
           max-width: 170px;
-          color: white;
-          background: green;
+        //   color: white;
+          background: greenyellow;
         }
         .home {
           color: white;
-          background: blue;
+          background: #4070f4;
           float: right;
         }
         .book {
@@ -71,10 +71,9 @@ export default function Success() {
           display: flex;
           align-items: center;
           flex-direction: column;
-          background-color: greenyellow;
+        //   background-color: greenyellow;
           padding: 20px;
           border-radius: 10px;
-          border: 1px solid black;
         }
         @media only screen and (max-width: 700px) {
             .sucBox{

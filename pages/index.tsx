@@ -50,7 +50,7 @@ export default function Home({
             Assignment is in Developement!
           </h2>
         )} */}
-        {/* <Success/> */}
+        <Success/>
 
 
       </main>
