@@ -2,24 +2,9 @@ import clientPromise from "../lib/mongodb";
 import Link from "next/link";
 import { useReducer, useState } from "react";
 import axios from "axios";
-import Form from "./form";
+import Profile from "./components/profile_model";
 
 export default function Top({ teachers }) {
-  // const [formData, setFromData] = useReducer(formReducer, {});
-  // const [T_name, setT_name] = useState("Dipendra");
-  // const [T_ID, setT_ID] = useState("1");
-  // console.log(T_ID);
-  // console.log(T_name);
-  const [showComponents, setShowComponents] = useState(
-    new Array(teachers.length).fill(false)
-  );
-  console.log(teachers.length);
-
-  function handleClick(index) {
-    const newShowComponents = [...showComponents];
-    newShowComponents[index] = true;
-    setShowComponents(newShowComponents);
-  }
 
   return (
     <>
@@ -30,20 +15,9 @@ export default function Top({ teachers }) {
           <small>(Available any time)</small>
         </p>
         <ul>
-          {teachers.map((teach, index) => (
-            <li key={teach._id}>
-              <h2>{teach.name}</h2>
-              <h3>{teach.bio}</h3>
-              <p>
-                {teach.qualifications}
-                {teach._id}
-              </p>
-              <Link href={`/form?teacher=${teach.name}&teacherId=${teach._id}`}>
-                <button>
-                  Book
-                </button>
-              </Link>
-            </li>
+          {teachers.map((teach) => (
+              <Profile key={teach._id} name={teach.name} bio={teach.bio} qualifications={teach.qualification}/>
+              
           ))}
         </ul>
       </div>
