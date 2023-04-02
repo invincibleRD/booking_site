@@ -3,23 +3,23 @@ import Link from "next/link";
 import { useReducer, useState } from "react";
 import axios from "axios";
 import Profile from "./components/profile_model";
+import styles from "./styles1.module.css";
 
 export default function Top({ teachers }) {
-
   return (
     <>
-      <Link href="/movies">movies</Link>
-      <div>
-        <h1>Top Teachers of All Time</h1>
-        <p>
-          <small>(Available any time)</small>
-        </p>
-        <ul>
-          {teachers.map((teach) => (
-              <Profile key={teach._id} name={teach.name} bio={teach.bio} qualifications={teach.qualification}/>
-              
-          ))}
-        </ul>
+      {/* <Link href="/movies">movies</Link> */}
+      <h1>Top Teachers of All Time</h1>
+      <div className={styles.teachersList}>
+        {teachers.map((teach) => (
+          <Profile
+            key={teach._id}
+            name={teach.name}
+            teacherId={teach._id}
+            bio={teach.bio}
+            qualifications={teach.qualification}
+          />
+        ))}
       </div>
     </>
   );
