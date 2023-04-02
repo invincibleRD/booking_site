@@ -191,7 +191,7 @@ export default function Home({
         }
         @media (max-width: 394px) {
           .title{
-            font-size:2rem;
+            font-size:2.5rem;
           }
           .subtitle{
             font-size:1rem
