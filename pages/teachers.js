@@ -7,9 +7,9 @@ import styles from "./styles1.module.css";
 
 export default function Top({ teachers }) {
   return (
-    <>
+    <div className={styles.head}>
       {/* <Link href="/movies">movies</Link> */}
-      <h1>Top Teachers of All Time</h1>
+      <div className={styles.logo}>Top Teachers of All Time</div>
       <div className={styles.teachersList}>
         {teachers.map((teach) => (
           <Profile
@@ -21,7 +21,21 @@ export default function Top({ teachers }) {
           />
         ))}
       </div>
-    </>
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+      `}</style>
+    </div>
   );
 }
 

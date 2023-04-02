@@ -58,7 +58,7 @@ function Form() {
         <div>
           <div className={styles.body}>
             <div className={styles.container}>
-              <div className={styles.title}>Registration</div>
+              <div className={styles.title}>Booking </div>
               <div className={styles.content}>
                 <form className={styles.form}>
                   <div className={styles.userDetails}>
@@ -145,11 +145,10 @@ function Form() {
                     
                   </div>
                   <div className={styles.description}>
-                    <span className={styles.details}>Description:</span>
                     <textarea
                       className={styles.textArea}
                       onChange={setFromData}
-                      placeholder="Enter topics you want to discuss"
+                      placeholder="Enter topics you want to discuss..."
                       name="description"
                     ></textarea>
                   </div>
