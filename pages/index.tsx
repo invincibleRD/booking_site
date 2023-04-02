@@ -2,6 +2,7 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 import Link from 'next/link'
+import Success from "./components/success";
 
 export async function getServerSideProps(context: any) {
   try {
@@ -32,7 +33,7 @@ export default function Home({
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Mentor Booking App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -49,6 +50,7 @@ export default function Home({
             Assignment is in Developement!
           </h2>
         )} */}
+        {/* <Success/> */}
 
 
       </main>
@@ -187,11 +189,25 @@ export default function Home({
             flex-direction: column;
           }
         }
+        @media (max-width: 394px) {
+          .title{
+            font-size:2rem;
+          }
+          .subtitle{
+            font-size:1rem
+          }
+          .grid {
+            width: 100%;
+            flex-direction: column;
+          }
+        }
       `}</style>
 
       <style jsx global>{`
         html,
         body {
+          height:100%;
+          background: linear-gradient(135deg, greenyellow, #4070f4);
           padding: 0;
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -202,6 +218,11 @@ export default function Home({
         * {
           box-sizing: border-box;
         }
+      //   @media only screen and (max-width: 600px) {
+      //     h1{
+      //         font-size:1rem;
+      //     }
+      // }
       `}</style>
     </div>
   )
