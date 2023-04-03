@@ -32,7 +32,7 @@ function Form() {
     if (formData.gender === undefined) formData.gender = "male";
     formData.teacher = teacher;
     formData.teacher_ID = teacherId;
-    console.log(formData);
+    // console.log(formData);
     axios
       .post(`/api/set_bookings`, formData)
       .then((res) => {

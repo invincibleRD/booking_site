@@ -37,13 +37,15 @@ export default async function handler(req, res) {
       slot_date_time,
       booking_time: currentDateTime,
     });
+    const myEmail = process.env.MY_EMAIL
+    const myPassword =process.env.MY_PASSWORD
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
       auth: {
-        user: 'bookingservice183@gmail.com',
-        pass: 'bbwvfrqguoszttwr'
+        user: myEmail,
+        pass: myPassword
       }
     });
     let confirm='';

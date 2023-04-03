@@ -8,6 +8,7 @@ export default function Success() {
 
     <div className="sucBox">
       <h1>Your Booking was Successfull.</h1>
+      <h2>Please check your Email</h2>
       <div className="links">
         <Link className="link1" href="../teachers">
           <div className="book">Book another session</div>
@@ -78,6 +79,9 @@ export default function Success() {
         @media only screen and (max-width: 700px) {
             .sucBox{
                 margin:15px;
+            }
+            h2{
+              font=-size:.7rem;
             }
           h1 {
             font-size: 1rem;
