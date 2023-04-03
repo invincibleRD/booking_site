@@ -8,7 +8,7 @@ export default function Success() {
 
     <div className="sucBox">
       <h1>Your Booking was Successfull.</h1>
-      <h2>Please check your Email</h2>
+      <h1>Please check your Email</h1>
       <div className="links">
         <Link className="link1" href="../teachers">
           <div className="book">Book another session</div>
