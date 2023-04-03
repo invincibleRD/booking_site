@@ -25,12 +25,11 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(formData).length == 0){
-      alert("Enter details to proceed with booking")
+    if (Object.keys(formData).length == 0) {
+      alert("Enter details to proceed with booking");
       return console.log("Dont have proper data to book");
-
     }
-      if(formData.gender===undefined) formData.gender='male';
+    if (formData.gender === undefined) formData.gender = "male";
     formData.teacher = teacher;
     formData.teacher_ID = teacherId;
     console.log(formData);
@@ -145,7 +144,6 @@ function Form() {
                         <option value="Hindi">hindi </option>
                       </select>
                     </div> */}
-                    
                   </div>
                   <div className={styles.description}>
                     <textarea

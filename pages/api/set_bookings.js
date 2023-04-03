@@ -1,5 +1,6 @@
 import clientPromise from "../../lib/mongodb";
 import Bookings_table from "../../models/bookingModel";
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -36,8 +37,34 @@ export default async function handler(req, res) {
       slot_date_time,
       booking_time: currentDateTime,
     });
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'bookingservice183@gmail.com',
+        pass: 'bbwvfrqguoszttwr'
+      }
+    });
+    let confirm='';
+    try{
+      await transporter.sendMail({
+        from: "DP",
+        to: email,
+        subject: `Booking confirmed with Mentor ${teacher}`,
+        html: `<p>Your booking has been confirmed with our Mentor <h2>${teacher}</h2></p><br>
+          <p><strong>Topics: </strong> ${description}</p><br>
+          <p><strong>Slote Time: </strong> ${slot_date_time}</p><br>
+        `
+      });
+      confirm='email sent';
+    }
+    catch(error){
+      confirm='email not sent';
 
-    res.status(200).json({ message: "Booked Successfully!" });
+    }
+
+    res.status(200).json({ message: `Booked Successfully! ${confirm}` });
   } catch (error) {
     res.status(500).json({ message: "Error While Booking!", error });
   }
