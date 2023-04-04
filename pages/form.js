@@ -6,6 +6,7 @@ import axios from "axios";
 import Success from "./components/success";
 import Error from "./components/error";
 import styles from "./styleform.module.css";
+import Loading from "./components/loading";
 
 const formReducer = (state, event) => {
   return {
@@ -19,13 +20,14 @@ function Form() {
   const [process, setProcess] = useState(false);
   const [processFailed, setProcessFailed] = useState(false);
   const [toemail, settoemail] = useState("");
+  const [bookingProcessing,setBookingProcessing]= useState(false);
   const router = useRouter();
   const teacher = router.query.teacher;
   const teacherId = router.query.teacherId;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(formData).length == 0) {
+    if (Object.keys(formData).length == 0 || !formData.email || !formData.slot_date_time) {
       alert("Enter details to proceed with booking");
       return console.log("Dont have proper data to book");
     }
@@ -33,17 +35,19 @@ function Form() {
     formData.teacher = teacher;
     formData.teacher_ID = teacherId;
     // console.log(formData);
+    setBookingProcessing(true);
     axios
-      .post(`/api/set_bookings`, formData)
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          console.log("Data uploaded successfully!");
-          setProcess(true);
-        } else {
-          console.log("Error uploading data");
-        }
-      })
+    .post(`/api/set_bookings`, formData)
+    .then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        setBookingProcessing(false);
+        console.log("Data uploaded successfully!");
+        setProcess(true);
+      } else {
+        console.log("Error uploading data");
+      }
+    })
       .catch((err) => {
         console.log(err);
         setProcessFailed(true);
@@ -52,7 +56,7 @@ function Form() {
 
   return (
     <>
-      {processFailed ? (
+      {bookingProcessing ? <Loading event='Confirming your boooking...'/> : processFailed ? (
         <Error />
       ) : process ? (
         <Success />

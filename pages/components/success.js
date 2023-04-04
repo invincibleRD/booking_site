@@ -7,8 +7,8 @@ export default function Success() {
     <div className="hi">
 
     <div className="sucBox">
-      <h1>Your Booking was Successfull.</h1>
-      <h1>Please check your Email</h1>
+      <div className="note">Your Booking was Successfull.</div>
+      <div className="note">Please check your Email.</div>
       <div className="links">
         <Link className="link1" href="../teachers">
           <div className="book">Book another session</div>
@@ -21,6 +21,8 @@ export default function Success() {
       <style jsx global>{`
         html,
         body {
+          min-height:100vh;
+          background: linear-gradient(135deg, greenyellow, #4070f4);
         //   display: flex;
         //   flex-direction: column;
         //   align-items: center;
@@ -36,6 +38,10 @@ export default function Success() {
         }
         h1 {
         }
+        .note{
+          font-size:20px;
+          padding-bottom:10px;
+        }
         .links {
           display: flex;
           flex-direction: column;
@@ -50,11 +56,12 @@ export default function Success() {
         }
         .home,
         .book {
+          font-weight:500;
           border-radius: 5px;
           padding: 8px;
         }
         .book {
-          max-width: 170px;
+          max-width: 180px;
         //   color: white;
           background: greenyellow;
         }
@@ -66,6 +73,7 @@ export default function Success() {
         .book {
         }
         .sucBox {
+          color:white;
           margin: auto;
           margin-top:20px;
           max-width: 700px;
