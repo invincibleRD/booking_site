@@ -42,7 +42,7 @@ export default function Home({
 
         <main>
           <h1 className="title">
-            Click to View <Link href='/teachers' style={{color:'blue'}}> Assignment</Link>
+            Click to View <Link href='/teachers' style={{color:'blue'}}> Project</Link>
           </h1>
 
           <h2 className="subtitle">By Dipendra Kumar Shah</h2>
