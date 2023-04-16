@@ -4,6 +4,7 @@ import { InferGetServerSidePropsType } from "next";
 import Link from "next/link";
 import Success from "./components/success";
 import Loading from "./components/loading";
+import Navbar from "./components/navbar";
 
 export async function getServerSideProps(context: any) {
   try {
@@ -33,13 +34,14 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
+
       {/* <Loading event="Loading..." /> */}
       <div className="container">
         <Head>
           <title>Mentor Booking App</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
+        <Navbar/>
         <main>
           <h1 className="title">
             Click to View <Link href='/teachers' style={{color:'blue'}}> Project</Link>
