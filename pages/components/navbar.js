@@ -1,20 +1,18 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import  styles from './styles.module.css'
 
 function Navbar() {
-	const navRef = useRef();
+	const [navRef ,setNavRef] =useState("");
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
+	const showNavbar = () => {  
+		setNavRef('responsive_nav')
 	};
 
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} ${navRef}`}>
 			<h3>LOGO</h3>
-			<nav className={styles.nav} ref={navRef}>
+			<nav className={`${styles.nav} ${styles.navRef}`} >
 				<a className={styles.a} href="/#">Home</a>
 				<a className={styles.a} href="/#">My work</a>
 				<a className={styles.a} href="/#">Blog</a>
