@@ -37,19 +37,19 @@ export default async function handler(req, res) {
       slot_date_time,
       booking_time: currentDateTime,
     });
-    const myEmail = process.env.MY_EMAIL
-    const myPassword =process.env.MY_PASSWORD
+    const myEmail = process.env.MY_EMAIL;
+    const myPassword = process.env.MY_PASSWORD;
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
       auth: {
         user: myEmail,
-        pass: myPassword
-      }
+        pass: myPassword,
+      },
     });
-    let confirm='';
-    let email_data=`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    let confirm = "";
+    let email_data = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
     <head>
     <meta charset="UTF-8">
@@ -281,23 +281,21 @@ export default async function handler(req, res) {
     </table>
     </div>
     </body>
-    </html>`
-    try{
+    </html>`;
+    try {
       await transporter.sendMail({
         from: "DP",
         to: email,
         subject: `Booking confirmed with Mentor ${teacher}`,
-        html: email_data
+        html: email_data,
       });
       // `<p>Your booking has been confirmed with our Mentor <h2>${teacher}</h2></p><br>
       //     <p><strong>Topics: </strong> ${description}</p><br>
       //     <p><strong>Slote Time: </strong> ${slot_date_time}</p><br>
       //   `
-      confirm='email sent';
-    }
-    catch(error){
-      confirm='email not sent';
-
+      confirm = "email sent";
+    } catch (error) {
+      confirm = "email not sent";
     }
 
     res.status(200).json({ message: `Booked Successfully! ${confirm}` });
