@@ -4,12 +4,13 @@ import { useReducer, useState } from "react";
 import axios from "axios";
 import Profile from "./components/profile_model";
 import styles from "./styles1.module.css";
-
+import Navbar from "./components/navbar";
 export default function Top({ teachers }) {
   return (
     <div className={styles.head}>
       {/* <Link href="/movies">movies</Link> */}
-      <div className={styles.logo}>Top Teachers of All Time</div>
+      <Navbar />
+      {/* <div className={styles.logo}>Top Teachers of All Time</div> */}
       <div className={styles.teachersList}>
         {teachers.map((teach) => (
           <Profile
@@ -24,6 +25,7 @@ export default function Top({ teachers }) {
       <style jsx global>{`
         html,
         body {
+          background: linear-gradient(135deg, greenyellow, #4070f4);
           padding: 0;
           // margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,

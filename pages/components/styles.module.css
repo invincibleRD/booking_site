@@ -31,7 +31,7 @@
   border-radius: 25px;
   margin: 20px;
   min-height: 500px;
-  background-color: greenyellow;
+  background-color: white;
 }
 .card_content {
     height: 50%;
@@ -68,7 +68,7 @@
 }
 .overlay::after {
   border-radius: 0 25px 0 0;
-  background-color: greenyellow;
+  background-color: white;
 }
 .card_image .imgDiv{
   position: relative;
@@ -242,6 +242,9 @@
 	.header .responsive_nav {
 		transform: translateY(100vh);
 	}
+  .hi{
+    color: red;
+  }
 
 	.nav .nav_close_btn {
 		position: absolute;
