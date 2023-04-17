@@ -281,8 +281,7 @@ export default async function handler(req, res) {
     </table>
     </div>
     </body>
-    </html>`;
-`
+    </html>;`
     try {
       await transporter.sendMail({
         from: "DP",
